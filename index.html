@@ -41,6 +41,7 @@ function enviarLogin() {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
+        tipo: Login
       valor: login
     })
   })
